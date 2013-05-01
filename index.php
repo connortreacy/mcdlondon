@@ -9,13 +9,12 @@
 	    // init the FB JS SDK
 	    FB.init({
 	      appId      : '329433190516212',                        // App ID from the app dashboard
-	      //channelUrl : '//ctmdclondon.herokuapp.com/channel.html', // Channel file for x-domain comms
+	      channelUrl : '//ctmdclondon.herokuapp.com/channel.html', // Channel file for x-domain comms
 	      status     : false,                                 // Check Facebook Login status
 	      xfbml      : false                                  // Look for social plugins on the page
 	    });
 	
 	    console.log('FB Ready!');
-	    FB.getLoginStatus();
 	  };
 	
 	  // Load the SDK asynchronously
