@@ -1,32 +1,23 @@
 <html>
   <head>
-  	<title>Login</title>
+  	<title>Plugins</title>
   </head>
   <body>
-    <h1>Login</h1>
+    <h1>Social Plugins</h1>
     <div id="fb-root"></div>
+    <div class="fb-like" data-href="http://example.com" data-send="false" 
+data-width="450" data-show-faces="true"></div>
 	<script>
-	  login = function() {
-		  FB.login(function(response){
-			  console.log(response);
-		  });
-	  }
 	  window.fbAsyncInit = function() {
 	    // init the FB JS SDK
 	    FB.init({
 	      appId      : '329433190516212',                        // App ID from the app dashboard
 	      channelUrl : '//ctmdclondon.herokuapp.com/channel.html', // Channel file for x-domain comms
-	      status     : true,                                 // Check Facebook Login status
+	      status     : false,                                 // Check Facebook Login status
 	      xfbml      : false                                  // Look for social plugins on the page
 	    });
 	
 	    console.log('FB Ready!');
-	    FB.getLoginStatus(function(response){
-	    	console.log(response);
-	    	if( response.status != "connected" ){
-		    	login();
-	    	}
-	    });
 	  };
 	
 	  // Load the SDK asynchronously
