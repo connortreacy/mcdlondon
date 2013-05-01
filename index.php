@@ -10,8 +10,8 @@
 	    FB.init({
 	      appId      : '329433190516212',                        // App ID from the app dashboard
 	      //channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel file for x-domain comms
-	      //status     : true,                                 // Check Facebook Login status
-	      //xfbml      : true                                  // Look for social plugins on the page
+	      status     : false,                                 // Check Facebook Login status
+	      xfbml      : false                                  // Look for social plugins on the page
 	    });
 	
 	    console.log('FB Ready!');
