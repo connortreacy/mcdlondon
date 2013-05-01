@@ -1,8 +1,9 @@
 <html>
   <head>
+  	<title>Init with Status</title>
   </head>
   <body>
-    <h1>Hello London</h1>
+    <h1>Init with Status</h1>
     <div id="fb-root"></div>
 	<script>
 	  window.fbAsyncInit = function() {
@@ -15,9 +16,6 @@
 	    });
 	
 	    console.log('FB Ready!');
-	    FB.getLoginStatus(function(response){
-	    	console.log(response);
-	    });
 	  };
 	
 	  // Load the SDK asynchronously
