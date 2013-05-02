@@ -4,6 +4,8 @@
   </head>
   <body>
     <h1>Init Only</h1>
+    <p><img src="feed.png" /></p>
+    <p><a href="#" onclick="feed()">Share</a></p>
     <div id="fb-root"></div>
 	<script>
 	  window.fbAsyncInit = function() {
@@ -17,6 +19,26 @@
 	
 	    console.log('FB Ready!');
 	  };
+	  
+	  feed = function() {
+		  FB.ui(
+		  {
+		    method: 'feed',
+		    name: 'Feed Example',
+		    link: 'https://ctmdclondon.herokuapp.com/feed.html',
+		    picture: 'https://ctmdclondon.herokuapp.com/feed.png',
+		    caption: 'Feed Example',
+		    description: "Sharing is better via the feed dialog. Oh, and it's really easy too!"
+		  },
+		  function(response) {
+		    if (response && response.post_id) {
+		      alert('Post was published.');
+		    } else {
+		      alert('Post was not published.');
+		    }
+		  }
+		);
+	  }
 	
 	  // Load the SDK asynchronously
 	  (function(d, s, id){
