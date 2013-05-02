@@ -1,11 +1,33 @@
 <html>
   <head>
-  	<title>Init</title>
+  	<title>Feed</title>
   </head>
   <body>
-    <h1>Init Only</h1>
+    <h1>Feed Dialog</h1>
+    <p><img src="feed.png" /></p>
+    <p><a href="#" onclick="feed()">Share</a></p>
     <div id="fb-root"></div>
 	<script>
+	  feed = function() {
+		  FB.ui(
+		  {
+		    method: 'feed',
+		    name: 'Feed Example',
+		    link: 'https://ctmdclondon.herokuapp.com/feed.html',
+		    picture: 'https://ctmdclondon.herokuapp.com/feed.png',
+		    caption: 'Feed Example',
+		    description: "Sharing is better via the feed dialog. Oh, and it's really easy too!"
+		  },
+		  function(response) {
+		    if (response && response.post_id) {
+		      alert('Post was published.');
+		    } else {
+		      alert('Post was not published.');
+		    }
+		  }
+		);
+	  };
+	  
 	  window.fbAsyncInit = function() {
 	    // init the FB JS SDK
 	    FB.init({
